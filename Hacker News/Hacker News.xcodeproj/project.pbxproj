@@ -15,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9584C5E5289AC89F00AC3643 /* Hacker-News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hacker-News-Info.plist"; sourceTree = SOURCE_ROOT; };
 		95949A5D289841F2007E120A /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95949A60289841F2007E120A /* Hacker_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hacker_NewsApp.swift; sourceTree = "<group>"; };
 		95949A62289841F2007E120A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		95949A5F289841F2007E120A /* Hacker News */ = {
 			isa = PBXGroup;
 			children = (
+				9584C5E5289AC89F00AC3643 /* Hacker-News-Info.plist */,
 				95949A60289841F2007E120A /* Hacker_NewsApp.swift */,
 				95949A62289841F2007E120A /* ContentView.swift */,
 				95F11979289844D4005DAF82 /* WebView.swift */,
@@ -274,6 +276,7 @@
 				DEVELOPMENT_TEAM = V49YJHMDHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hacker-News-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +307,7 @@
 				DEVELOPMENT_TEAM = V49YJHMDHJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Hacker-News-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
