@@ -9,39 +9,55 @@ import SwiftUI
 import WebKit
 
 struct ContentView: View {
-
+    
     @StateObject var storyStore = StoryStore.shared
     @State var storyListType: StoryListType = .newest
     
-    @State var togglePullToRefresh = false
-        
+    //---Custom segmented control appearance
+    init() {
+        UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(.accentColor.opacity(0.9))
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(.white)], for: .selected)
+        UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor: UIColor(.primary)], for: .normal)
+    }
+    
     var body: some View {
         NavigationView{
             VStack(spacing: 0){
                 
-                Text("Hacker News")
-                    .font(.largeTitle)
-                    .fontWeight(.medium)
-                    .foregroundColor(.accentColor)
-                    .padding(.bottom)
-                
-                Picker(selection: $storyListType) {
-                    ForEach(StoryListType.allCases, id: \.self) { listType in
-                        Text(listType.rawValue)
-                    }
-                } label: {
-                    EmptyView()
+                VStack(spacing: 0) {
+                    Text("Hacker News")
+                        .font(.largeTitle)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .padding(.bottom)
+                    
+                    Picker(selection: $storyListType) {
+                        ForEach(StoryListType.allCases, id: \.self) { listType in
+                            Text(listType.rawValue)
+                        }
+                    } label: { EmptyView()}
+                        .pickerStyle(.segmented)
+                        .background{
+                            Color(UIColor.systemBackground).opacity(0.8)
+                                .clipShape(RoundedRectangle(cornerRadius: 8))
+                        }
                 }
-                .pickerStyle(.segmented)
+                .background{
+                    Color.accentColor.opacity(0.9)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .ignoresSafeArea()
+                }
                 
                 StoriesListView(storyListType: $storyListType)
             }
             .navigationBarHidden(true)
         }
+        
         .onAppear{
             loadStories()
             loadFavorites()
         }
+        
         .onChange(of: storyListType) { listType in
             refreshStories(listType: listType)
         }
@@ -51,10 +67,6 @@ struct ContentView: View {
         if listType != .favorites {
             storyStore.isRefreshing.toggle()
             loadStories()
-        } else {
-            Task{
-                await storyStore.decodeSavedFavorites()
-            }
         }
     }
     
