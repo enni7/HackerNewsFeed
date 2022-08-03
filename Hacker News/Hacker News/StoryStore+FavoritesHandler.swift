@@ -40,7 +40,7 @@ extension StoryStore {
         }
     }
     
-    func addOrRemoveFavorite(item: Story){
+    func addOrRemoveFavorite(item: Item){
         if itemIsFavorite(item: item) {
             self.favoritesStories = self.favoritesStories.filter({$0.id != item.id})
             self.favoritesStoriesList = self.favoritesStoriesList.filter({$0 != item.id})
@@ -51,7 +51,7 @@ extension StoryStore {
         save()
     }
     
-    func itemIsFavorite(item: Story) -> Bool {
+    func itemIsFavorite(item: Item) -> Bool {
         if self.favoritesStoriesList.contains(item.id) {
             return true
         } else {

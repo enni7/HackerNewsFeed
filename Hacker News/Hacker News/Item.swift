@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Story : Codable, Identifiable, Equatable {
+struct Item : Codable, Identifiable, Equatable {
     let by : String?
     let descendants : Int?
     let id : Int
@@ -39,7 +39,7 @@ struct Story : Codable, Identifiable, Equatable {
     }
     
     // An item example for previews
-    static let storyExample = Story(
+    static let storyExample = Item(
         by: "iamflimflam1",
         descendants: 73,
         id: 32129478,

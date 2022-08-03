@@ -11,7 +11,7 @@ struct StoriesListView: View {
     @StateObject var storyStore = StoryStore.shared
     @Binding var storyListType: StoryListType
     
-    var storiesList: [Story] {
+    var storiesList: [Item] {
         switch storyListType {
         case .newest:
             return storyStore.stories
@@ -41,7 +41,10 @@ struct StoriesListView: View {
                 
             } else {
                 storyStore.isRefreshing.toggle()
-                storyStore.loadAndDecodeStoriesList(storyListType: storyListType)
+                Task{
+                    await storyStore.loadStoriesIDList(listType: storyListType)
+                    await storyStore.decodeStoriesArray(for: storyListType)
+                }
             }
         }
     }

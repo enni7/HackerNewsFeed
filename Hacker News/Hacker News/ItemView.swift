@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ItemView: View {
     @StateObject var storyStore = StoryStore.shared
-    @State var item: Story
+    @State var item: Item
     @State var showStory: Bool = false
     
     var body: some View {
@@ -115,6 +115,6 @@ struct ItemView: View {
 
 struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemView(item: Story.storyExample)
+        ItemView(item: Item.storyExample)
     }
 }

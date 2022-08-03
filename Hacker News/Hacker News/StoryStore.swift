@@ -33,10 +33,10 @@ class StoryStore: ObservableObject {
     
     
     var storiesList = [Int]()
-    @Published var stories = [Story]()
+    @Published var stories = [Item]()
     
     var favoritesStoriesList = [Int]()
-    @Published var favoritesStories = [Story]()
+    @Published var favoritesStories = [Item]()
         
     var hasFinishedDecoding = false
     var shouldStopDecoding = false
@@ -105,7 +105,7 @@ class StoryStore: ObservableObject {
         //--- Decode
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
-            let story : Story = try JSONDecoder().decode(Story.self, from: data)
+            let story : Item = try JSONDecoder().decode(Item.self, from: data)
             
             //--- Add the item to relative stories array
             DispatchQueue.main.asyncAndWait(execute: DispatchWorkItem(block: {
