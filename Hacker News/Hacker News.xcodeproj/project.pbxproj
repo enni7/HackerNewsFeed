@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9584C5E7289AC94000AC3643 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9584C5E6289AC94000AC3643 /* Story.swift */; };
 		95949A61289841F2007E120A /* Hacker_NewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949A60289841F2007E120A /* Hacker_NewsApp.swift */; };
 		95949A63289841F2007E120A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949A62289841F2007E120A /* ContentView.swift */; };
 		95949A65289841F4007E120A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95949A64289841F4007E120A /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		9584C5E5289AC89F00AC3643 /* Hacker-News-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Hacker-News-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9584C5E6289AC94000AC3643 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		95949A5D289841F2007E120A /* Hacker News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hacker News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		95949A60289841F2007E120A /* Hacker_NewsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hacker_NewsApp.swift; sourceTree = "<group>"; };
 		95949A62289841F2007E120A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				9584C5E5289AC89F00AC3643 /* Hacker-News-Info.plist */,
 				95949A60289841F2007E120A /* Hacker_NewsApp.swift */,
 				95949A62289841F2007E120A /* ContentView.swift */,
+				9584C5E6289AC94000AC3643 /* Story.swift */,
 				95F11979289844D4005DAF82 /* WebView.swift */,
 				95949A64289841F4007E120A /* Assets.xcassets */,
 				95949A66289841F4007E120A /* Preview Content */,
@@ -145,6 +148,7 @@
 				95F1197A289844D4005DAF82 /* WebView.swift in Sources */,
 				95949A63289841F2007E120A /* ContentView.swift in Sources */,
 				95949A61289841F2007E120A /* Hacker_NewsApp.swift in Sources */,
+				9584C5E7289AC94000AC3643 /* Story.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
