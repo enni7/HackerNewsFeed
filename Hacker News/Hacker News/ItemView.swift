@@ -20,26 +20,24 @@ struct ItemView: View {
                     if let itemUrl = item.url {
                         WebView(urlString: itemUrl)
                             .navigationBarTitleDisplayMode(.inline)
+                            .ignoresSafeArea(.all, edges: .bottom)
                     } else {
                         Text("Sorry, couldn't found the story web page.")
                     }
-                } label: {
-                    EmptyView()
-                }
-                .opacity(0)
+                } label: { EmptyView() }
+                    .opacity(0)
                 
                 HStack {
                     Text(item.type?.capitalized ?? "")
-                        .font(.caption)
-                        .fontWeight(.thin)
+                        .font(.footnote)
+                        .fontWeight(.light)
                     
                     Spacer()
                     Text(item.formattedDate)
-                        .font(.caption)
+                        .font(.footnote)
                         .fontWeight(.regular)
                 }
-                .padding(.vertical, 4)
-                
+                .padding(.bottom, 4)
                 
                 HStack{
                     AsyncImage(url: URL(string: item.iconUrl)) { phase in
@@ -54,23 +52,21 @@ struct ItemView: View {
                             Image(systemName: "safari")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 40, height: 40)
+                                .frame(width: 50, height: 50)
                                 .transition(.opacity)
                         }
                     }
                     .padding(.trailing)
                     
                     VStack(alignment:.leading, spacing: 8){
-                        
                         Text(item.title ?? "")
                             .font(.headline)
                             .fontWeight(.medium)
                             .multilineTextAlignment(.leading)
                         
-                        Text("by \(item.by ?? "")")
-                            .font(.footnote)
+                        Text("\(item.by ?? "")")
+                            .font(.subheadline)
                     }
-                    
                 }
             }
             .onTapGesture {
@@ -80,6 +76,7 @@ struct ItemView: View {
             HStack{
                 Label {
                     Text("\(item.score ?? 0)")
+                        .font(.callout)
                 } icon: {
                     Image(systemName: "chart.line.uptrend.xyaxis")
                         .foregroundColor(.accentColor)
@@ -91,6 +88,7 @@ struct ItemView: View {
                 } label: {
                     Label {
                         Text("\(item.descendants ?? 0)")
+                            .font(.callout)
                     } icon: {
                         Image(systemName: "message")
                             .foregroundColor(.accentColor)
@@ -102,16 +100,15 @@ struct ItemView: View {
                 
                 Spacer()
                 Button {
-                    //                    withAnimation {
                     storyStore.addOrRemoveFavorite(item: item)
-                    //                    }
                 } label: {
                     Image(systemName: storyStore.itemIsFavorite(item: item) ? "heart.fill" : "heart")
+                        .foregroundColor(.accentColor)
                 }
                 .padding([.vertical, .leading], 8)
                 
             }
-            .font(.callout)
+            .font(.headline)
         }
     }
 }

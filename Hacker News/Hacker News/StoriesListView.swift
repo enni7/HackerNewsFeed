@@ -31,7 +31,6 @@ struct StoriesListView: View {
         List{
             ForEach(storiesList){ story in
                 ItemView(item: story)
-                    .padding(.horizontal)
                     .buttonStyle(.plain)
             }
         }
