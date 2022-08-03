@@ -11,6 +11,7 @@
 		95949A63289841F2007E120A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95949A62289841F2007E120A /* ContentView.swift */; };
 		95949A65289841F4007E120A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95949A64289841F4007E120A /* Assets.xcassets */; };
 		95949A68289841F4007E120A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95949A67289841F4007E120A /* Preview Assets.xcassets */; };
+		95F1197A289844D4005DAF82 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F11979289844D4005DAF82 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		95949A62289841F2007E120A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		95949A64289841F4007E120A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95949A67289841F4007E120A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		95F11979289844D4005DAF82 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				95949A60289841F2007E120A /* Hacker_NewsApp.swift */,
 				95949A62289841F2007E120A /* ContentView.swift */,
+				95F11979289844D4005DAF82 /* WebView.swift */,
 				95949A64289841F4007E120A /* Assets.xcassets */,
 				95949A66289841F4007E120A /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F1197A289844D4005DAF82 /* WebView.swift in Sources */,
 				95949A63289841F2007E120A /* ContentView.swift in Sources */,
 				95949A61289841F2007E120A /* Hacker_NewsApp.swift in Sources */,
 			);
