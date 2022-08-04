@@ -18,6 +18,7 @@ struct CommentsListView: View {
                 .padding(.horizontal)
                 .padding(.bottom)
             Divider()
+                .padding(.bottom, 10)
             ScrollView(.vertical, showsIndicators: false){
                 LazyVStack(alignment: .leading){
                     ForEach(comments) { comment in
