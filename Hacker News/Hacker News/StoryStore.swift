@@ -69,8 +69,8 @@ class StoryStore: ObservableObject {
             
             DispatchQueue.main.async {
                 
-                //--- Loads the first 100 items (IDs) of the list
-                self.storiesList.append(contentsOf: list.prefix(100))
+                //--- Loads the first 70 items (IDs) of the list
+                self.storiesList.append(contentsOf: list.prefix(70))
             }
         } catch {
             print(error.localizedDescription)
@@ -85,7 +85,6 @@ class StoryStore: ObservableObject {
             if shouldStopDecoding {
                 break
             }
-            
             await decodeAndAddItem(itemID: storyID, storyListType: listType)
         }
         
@@ -121,10 +120,4 @@ class StoryStore: ObservableObject {
         }
     }
     
-    func loadAndDecodeStoriesList(storyListType: StoryListType) {
-        Task {
-            await self.loadStoriesIDList(listType: storyListType)
-            await self.decodeStoriesArray(for: storyListType)
-        }
-    }
 }
