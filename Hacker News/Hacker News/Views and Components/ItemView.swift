@@ -79,7 +79,6 @@ struct ItemView: View {
                         .foregroundColor(.accentColor)
                 }
                 .padding([.vertical, .leading], 8)
-                
             }
             .font(.headline)
         }

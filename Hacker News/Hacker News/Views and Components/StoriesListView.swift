@@ -11,19 +11,13 @@ struct StoriesListView: View {
     @StateObject var storyStore = StoryStore.shared
     @Binding var storyListType: StoryListType
     
+    //List of Stories to display
     var storiesList: [Item] {
         switch storyListType {
-        case .newest:
-            return storyStore.stories
-            
-        case .top:
-            return storyStore.stories
-            
-        case .bestStories:
-            return storyStore.stories
-            
         case .favorites:
             return storyStore.favoritesStories
+        default:
+            return storyStore.stories
         }
     }
     
@@ -38,7 +32,6 @@ struct StoriesListView: View {
         .refreshable {
             if storyListType == .favorites {
                 Task{ await storyStore.decodeSavedFavorites() }
-                
             } else {
                 storyStore.isRefreshing.toggle()
                 Task{

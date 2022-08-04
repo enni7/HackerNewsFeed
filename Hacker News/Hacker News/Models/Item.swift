@@ -20,7 +20,7 @@ struct Item : Codable, Identifiable, Equatable {
     let type : String?
     let url : String?
     var indentForComment: Int?
-        
+    
     var formattedDate: String {
         if let time = time {
             let date = Date(timeIntervalSince1970: TimeInterval(time))
@@ -40,6 +40,15 @@ struct Item : Codable, Identifiable, Equatable {
         }
     }
     
+    var cgFloatIndent : CGFloat {
+        guard let indentForComment = indentForComment else {return 0.0}
+        if indentForComment > 60 {
+            return CGFloat(60)
+        } else {
+            return CGFloat(indentForComment)
+        }
+    }
+    
     // 64x64 icon URL of the story web page
     var iconUrl: String {
         if let url = url {
@@ -50,21 +59,13 @@ struct Item : Codable, Identifiable, Equatable {
         }
     }
     
+    // Convert the HTML formatted text in a plain string
     mutating func convertHTMLCommentText(){
         if let text = self.text {
             self.text = text.getHtmlFormattedString()
         }
     }
-
-    var cgFloatIndent : CGFloat {
-        guard let indentForComment = indentForComment else {return 0.0}
-        if indentForComment > 60 {
-            return CGFloat(60)
-        } else {
-            return CGFloat(indentForComment)
-        }
-    }
-
+    
     // Story example for previews
     static let storyExample = Item(
         by: "iamflimflam1",
@@ -94,7 +95,8 @@ struct Item : Codable, Identifiable, Equatable {
 
 
 
-/* ------- STORY PROPERTIES LEGEND
+/* ----- ITEM PROPERTIES LEGEND
+ 
  id           The item's unique id.
  type         The type of item. One of "job", "story" in our lists
  by           The username of the item's author.
@@ -105,4 +107,6 @@ struct Item : Codable, Identifiable, Equatable {
  score        The story's score, or the votes for a pollopt.
  title        The title of the story, poll or job. HTML.
  descendants  In the case of stories or polls, the total comment count.
-*/
+ indentForComment  For handling appearance of comment's kids.
+ 
+ */

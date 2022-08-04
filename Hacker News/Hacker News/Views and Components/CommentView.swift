@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CommentView: View {
     @State var item: Item
-        
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8){
             HStack{
@@ -23,6 +23,7 @@ struct CommentView: View {
                     .font(.subheadline)
                     .fontWeight(.light)
             }
+            
             Text(item.text ?? "")
                 .multilineTextAlignment(.leading)
         }

@@ -13,7 +13,7 @@ extension StoryStore {
         let docDir = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         return docDir.appendingPathComponent("FavoritesStoriesList.json")
     }
-
+    
     func loadFavorites() throws {
         let data = try Data(contentsOf: self.fileURL)
         let decodedList = try JSONDecoder().decode(Array<Int>.self, from: data)
@@ -32,7 +32,7 @@ extension StoryStore {
             print(error.localizedDescription)
         }
     }
-
+    
     func decodeSavedFavorites() async {
         self.favoritesStories = []
         for storyID in favoritesStoriesList {

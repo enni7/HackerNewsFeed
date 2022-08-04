@@ -13,6 +13,7 @@ public enum StoryListType: String, CaseIterable {
     case bestStories = "Bests"
     case favorites = "Favorites"
     
+    // Return the string component for the url list request
     var stringForURL : String? {
         switch self {
         case .newest:
@@ -31,13 +32,12 @@ class StoryStore: ObservableObject {
     
     static let shared: StoryStore = StoryStore()
     
-    
     var storiesList = [Int]()
     @Published var stories = [Item]()
     
     var favoritesStoriesList = [Int]()
     @Published var favoritesStories = [Item]()
-        
+    
     var hasFinishedDecoding = false
     var shouldStopDecoding = false
     var isRefreshing = false {
@@ -48,12 +48,11 @@ class StoryStore: ObservableObject {
         }
     }
     
-    private init() {
-
-    }
-            
+    private init() { }
+    
+    // Populate the array of stories IDs
     func loadStoriesIDList(listType: StoryListType) async {
-
+        
         self.storiesList.removeAll()
         
         guard let stringTypeForUrl = listType.stringForURL,
@@ -98,10 +97,10 @@ class StoryStore: ObservableObject {
             print("Invalid story json url.")
             return
         }
-
+        
         let urlRequest = URLRequest(url: url)
         
-        //--- Decode
+        //--- Decode the item
         do {
             let (data, _) = try await URLSession.shared.data(for: urlRequest)
             let story : Item = try JSONDecoder().decode(Item.self, from: data)
@@ -119,5 +118,4 @@ class StoryStore: ObservableObject {
             print("Error in decoding an item. \(error.localizedDescription)")
         }
     }
-    
 }

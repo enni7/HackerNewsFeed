@@ -8,6 +8,7 @@
 import SwiftUI
 import WebKit
 
+// WkWebView that shows the story
 struct WebView: UIViewRepresentable {
     
     let urlString: String

@@ -53,7 +53,7 @@ struct StoryLabel : View {
                         .font(.subheadline)
                 }
             }
-
+            
         }
     }
 }

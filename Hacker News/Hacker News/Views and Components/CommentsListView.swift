@@ -19,9 +19,11 @@ struct CommentsListView: View {
                 .padding(.bottom)
             Divider()
                 .padding(.bottom, 10)
+            
             ScrollView(.vertical, showsIndicators: false){
                 LazyVStack(alignment: .leading){
                     ForEach(comments) { comment in
+                        
                         if comment.text != nil {
                             CommentView(item: comment)
                                 .padding(.horizontal)
@@ -32,6 +34,7 @@ struct CommentsListView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("Comments")
+        
         .onAppear{
             Task {
                 await loadCurrentItemComments(for: item)
@@ -39,6 +42,7 @@ struct CommentsListView: View {
         }
     }
     
+    //Loads the item comments and each of its nested comments
     func loadCurrentItemComments(for item: Item) async {
         if let kids = item.kids {
             for kid in kids {
@@ -57,7 +61,6 @@ struct CommentsListView: View {
                             indentForComment += 12
                             await loadCurrentItemComments(for: comment)
                             indentForComment -= 12
-                            
                         }
                     }
                     
