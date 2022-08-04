@@ -55,6 +55,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95380D3C289C171600DA0C10 /* Views and Components */ = {
+			isa = PBXGroup;
+			children = (
+				95949A62289841F2007E120A /* ContentView.swift */,
+				9584C5EE289ACB4400AC3643 /* StoriesListView.swift */,
+				9584C5E8289AC9E600AC3643 /* ItemView.swift */,
+				95380D3A289C12D900DA0C10 /* StoryLabel.swift */,
+				956120BE289AF2DF00A48429 /* CommentsListView.swift */,
+				95380D34289BD0F200DA0C10 /* CommentView.swift */,
+				95F11979289844D4005DAF82 /* WebView.swift */,
+			);
+			path = "Views and Components";
+			sourceTree = "<group>";
+		};
+		95380D3D289C174F00DA0C10 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9584C5E6289AC94000AC3643 /* Item.swift */,
+				9584C5EA289ACA0500AC3643 /* StoryStore.swift */,
+				9584C5EC289ACA4300AC3643 /* StoryStore+FavoritesHandler.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		95949A54289841F2007E120A = {
 			isa = PBXGroup;
 			children = (
@@ -76,16 +100,8 @@
 			children = (
 				9584C5E5289AC89F00AC3643 /* Hacker-News-Info.plist */,
 				95949A60289841F2007E120A /* Hacker_NewsApp.swift */,
-				95949A62289841F2007E120A /* ContentView.swift */,
-				9584C5EE289ACB4400AC3643 /* StoriesListView.swift */,
-				9584C5E8289AC9E600AC3643 /* ItemView.swift */,
-				95380D3A289C12D900DA0C10 /* StoryLabel.swift */,
-				956120BE289AF2DF00A48429 /* CommentsListView.swift */,
-				95380D34289BD0F200DA0C10 /* CommentView.swift */,
-				95F11979289844D4005DAF82 /* WebView.swift */,
-				9584C5EA289ACA0500AC3643 /* StoryStore.swift */,
-				9584C5EC289ACA4300AC3643 /* StoryStore+FavoritesHandler.swift */,
-				9584C5E6289AC94000AC3643 /* Item.swift */,
+				95380D3C289C171600DA0C10 /* Views and Components */,
+				95380D3D289C174F00DA0C10 /* Models */,
 				95380D36289BD46300DA0C10 /* Date+timeAgo.swift */,
 				95380D38289BD99200DA0C10 /* String+FormattedHTML.swift */,
 				95949A64289841F4007E120A /* Assets.xcassets */,
